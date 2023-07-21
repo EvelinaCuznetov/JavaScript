@@ -1,0 +1,17 @@
+
+
+<script>
+    batteryCharge = 70              // %    <-----  variable
+
+    FULL_BATTERY = 100              // 100% -fully charged battery
+    chargePercentInMinutes = 10     // 1% - 10 minutes
+    oneHour=60
+
+    etWorkInMinutes        = batteryCharge * chargePercentInMinutes
+    etWorkInHours          =etWorkInMinutes / oneHour
+    // display functions:
+    alert( "remaining time (minutes) " + etWorkInMinutes ) //plaint text
+    alert( "remaining time (hours)" + etWorkInHours )
+
+
+</script>
