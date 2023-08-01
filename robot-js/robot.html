@@ -57,7 +57,7 @@
 
        <script>
           left = 0
-          top = 0
+          up = 0
        </script>
 
     <div id="controls">
@@ -67,13 +67,13 @@
         onclick="
          // js code
          // 1. increase the coordinate
-        top -= 20
+        up -= 20
 
          // 1b. LIMITS
-        top < 0 ? top = 0: null
+        up < 0 ? up = 0: null
         
          // 2. render it in the box
-        box.innerHTML = `<div class='robot'style='position: relative; top: ${top}px;'>👾</div>`
+        box.innerHTML = `<div class='robot'style='position: relative; left: ${left}px; top: ${up}px;'>👾</div>`
         "
         ><i class="fa-solid fa-circle-up"></i></button>
     </div>
@@ -89,7 +89,7 @@
         left < 0 ? left = 0: null
 
            // 2. render it in the box
-        box.innerHTML = `<div class='robot'style='position: relative; left: ${left}px;'>👾</div>`
+        box.innerHTML = `<div class='robot'style='position: relative; left: ${left}px; top: ${up}px;'>👾</div>`
         "
         
         ><i class="fa-solid fa-circle-arrow-left"></i></button>
@@ -104,7 +104,7 @@
         left > 350 ? left = 350: null
 
             // 2. render it in the box
-        box.innerHTML = `<div class='robot'style='position: relative; left: ${left}px;'>👾</div>`
+        box.innerHTML = `<div class='robot'style='position: relative; left: ${left}px; top: ${up}px;'>👾</div>`
         "
         ><i class="fa-solid fa-circle-arrow-right"></i></button>
 </div>
@@ -114,19 +114,15 @@
     onclick="
      // js code
      // 1. increase the coordinate
-    top += 20
+    up += 20
 
      // 1b. LIMITS
-    top > 350 ? top = 350: null
+    up > 350 ? up = 350: null
 
      // 2. render it in the box
-    box.innerHTML = `<div class='robot'style='position: relative; top: ${top}px;'>👾</div>`
+    box.innerHTML = `<div class='robot'style='position: relative; left: ${left}px; top: ${up}px;'>👾</div>`
     "
     ><i class="fa-solid fa-circle-arrow-down"></i></button>
-
-    <!-- Nu-mi reuseste sa activez sagetile sus/jos. Cand inspectez imi arata textul de mai jos.  -->
-    <!-- <div class="robot" style="position: relative; top: [object Window]px;">👾</div> -->
-</div>
 
 </div>
 
