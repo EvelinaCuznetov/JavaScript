@@ -1,0 +1,38 @@
+<script>
+    // global variables
+
+    let cost = 0
+    const discount = 20 // %
+
+    let serviceOneSelected = confirm("1. Teeth whitening?")
+    if (serviceOneSelected) { // == true
+        cost += 500
+    }
+
+    let serviceTwoSelected = confirm("2. Tooth correction?")
+    if (serviceTwoSelected) { // == true
+        cost += 1500
+    }
+
+    let serviceThreeSelected = confirm("3. Tooth extraction?")
+    if (serviceThreeSelected) { // == true
+        cost += 1000
+    }
+
+    // alert(
+    //     "Total cost: " + cost + "\n" +
+    //     "discount " + discount + "% \n" +
+    //     "cost with discount: " + (100 - discount) * cost / 100
+    //     )
+
+    if (cost >= 2000) {
+        alert("Total cost: " + cost + "\n" +
+                "discount " + discount + "% \n" +
+                "cost with discount: " + (100 - discount) * cost / 100
+            )
+    } 
+    else {
+        alert("Total cost: " + cost)
+    }
+
+</script>
