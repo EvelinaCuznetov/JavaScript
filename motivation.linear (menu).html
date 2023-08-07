@@ -1,0 +1,64 @@
+<script>
+
+// LINEAR
+foodName   = "Salad"  // string
+foodPrice  = 50.00    // number
+priceUnits = "MDL"    // string
+foodAvailQ = 5        // number
+
+clientQ    = parseInt( prompt( "How many " +foodName + " do you want ?" ))
+
+// HERE - DECISION ?
+
+if ( foodAvailQ >= clientQ) {
+    cost_1 = foodPrice * clientQ
+    alert( "Total cost: " + cost_1)
+}
+else {
+    alert( 
+        "Sorry, we can offer only: " + foodAvailQ + 
+        " \nPlease select from the available quantity"
+    )
+    clientQ = parseInt( prompt("How many " + foodName + " do you want ?")
+)
+}
+
+drinkName   =  "Juice"
+drinkPrice  =  20.00
+priceUnits = "MDL"
+drinkAvailQ = 10
+
+clientDrinkQ = parseInt(prompt("How much " + drinkName + " do you want ?"))
+
+    // HERE - DECISION ?
+
+    if (drinkAvailQ >= clientDrinkQ) {
+        cost_2 = drinkPrice * clientDrinkQ
+        alert("Total cost: " + cost_2 + priceUnits)
+    }
+    else {
+        alert(
+            "Sorry, we can offer only: " + drinkAvailQ +
+            " \nPlease select from the available quantity"
+        )
+        clientQ = parseInt(prompt("How much " + drinkName + " do you want ?")
+        )
+    }
+
+    deliveryCost = 30.00
+    
+    price = cost_1 + cost_2
+
+    if (price >= 300) {
+        totalPrice = price 
+        alert ( "Total " + totalPrice + priceUnits + 
+        " \nFree delivery !")
+    }
+    else {
+        totalPrice = price + deliveryCost
+        alert ("Delivery tax = " + deliveryCost + priceUnits +
+        "\nTotal = " + totalPrice + priceUnits +
+        "\n\nDelivery is free for orders over 400 " + priceUnits)
+    }
+
+</script>
