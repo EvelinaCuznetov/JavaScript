@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NEWS Carousel</title>
+</head>
+<body>
+    
+
+    <section>
+        <header>
+            <h1>Breaking NEWS</h1>
+        </header>
+        <ul>
+            <li id="i1">
+                <article>
+                    <h2>News title 1</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, sed? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, esse. Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, neque.</p>
+                </article>
+            </li>
+            <li id="i2">
+                <article>
+                    <h2>News title 2</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, sed. Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, neque.</p>
+                </article>
+            </li>
+            <li id="i3" style="display: none;">
+                <article>
+                    <h2>News title 3</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, harum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, veniam quae dolore corporis atque est tenetur magni asperiores eum suscipit.</p>
+                </article>
+            </li>
+            <li id="i4" style="display: none;">
+                <article>
+                    <h2>News title 4</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, est. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, veniam quae dolore corporis atque est tenetur magni asperiores eum suscipit.</p>
+                </article>
+            </li>
+            <li id="i5" style="display: none;">
+                <article>
+                    <h2>News title 5</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, est. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, veniam quae dolore corporis atque est tenetur magni asperiores eum suscipit.</p>
+                </article>
+            </li>
+            <li id="i6" style="display: none;">
+                <article>
+                    <h2>News title 6</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, est. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, veniam quae dolore corporis atque est tenetur magni asperiores eum suscipit.</p>
+                </article>
+            </li>
+            <li id="i7" style="display: none;">
+                <article>
+                    <h2>News title 7</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eos quae sed quibusdam reprehenderit deserunt doloribus enim, nisi adipisci? Totam?</p>
+                </article>
+            </li>
+            <li id="i8" style="display: none;">
+                <article>
+                    <h2>News title 8</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eos quae sed quibusdam reprehenderit deserunt doloribus enim, nisi adipisci? Totam?</p>
+           </article>
+           </li>
+        </ul>
+        <footer style="text-align: right;">
+            <button 
+            onclick="prev()">
+                &lt;
+            </button>
+            <button
+            onclick="one()"
+            >1</button>
+            <button
+            onclick="two()"
+            >2</button>
+            <button
+            onclick="three()"
+            >3</button>
+            <button
+            onclick="four()"
+            >4</button>
+            <button 
+            onclick="next()">
+            &gt;
+        </button>
+        </footer>
+    </section>
+
+    <script>
+        let page = 1
+
+        function prev () {
+            page--
+            if (page < 1) {
+                page = 4
+            }
+            if (page == 1) {
+                hideAll()
+                i1.style.display = 'block'
+                i2.style.display = 'block'
+            }
+            if (page == 2) {
+                hideAll()
+                i3.style.display = 'block'
+                i4.style.display = 'block'
+            }
+            if (page == 3) {
+                hideAll()
+                i5.style.display = 'block'
+                i6.style.display = 'block'
+            }
+            if (page == 4) {
+                hideAll()
+                i7.style.display = 'block'
+                i8.style.display = 'block'
+            }
+        
+        }
+
+        function one () {
+            page = 1
+            if (page == 1) {
+                hideAll() 
+                i1.style.display = 'block'
+                i2.style.display = 'block'
+            }
+        }
+        function two () {
+            page = 2
+            if (page == 2) {
+                hideAll()
+                i3.style.display = 'block'
+                i4.style.display = 'block'
+            }
+        }
+        function three() {
+            page = 3
+            if (page == 3) {
+                hideAll()
+                i5.style.display = 'block'
+                i6.style.display = 'block'
+            }
+        }
+            function four() {
+            page = 4
+            if (page == 4) {
+                hideAll()
+                i7.style.display = 'block'
+                i8.style.display = 'block'
+                }
+            }
+
+        function next () {
+            page++    
+            if (page > 4) {
+                page = 1
+            }
+
+            if (page == 1) {
+                hideAll()
+                i1.style.display='block'
+                i2.style.display='block'
+            }
+            if (page == 2) {
+                hideAll()
+                i3.style.display='block'
+                i4.style.display='block'
+            }
+            if (page == 3) {
+                hideAll()
+                i5.style.display='block'
+                i6.style.display='block'
+            }
+            if (page == 4) {
+                hideAll()
+                i7.style.display='block'
+                i8.style.display='block'
+                }
+            }
+        function hideAll () {
+            i1.style.display='none'
+            i2.style.display='none'
+            i3.style.display='none'
+            i4.style.display='none'
+            i5.style.display='none'
+            i6.style.display='none'
+            i7.style.display='none'
+            i8.style.display='none'
+        }
+    </script>
+
+</body>
+</html>
