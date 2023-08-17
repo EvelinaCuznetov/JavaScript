@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MINER GAME</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+        .map {
+            width: 500px;
+            height: 500px;
+            border: 5px solid #666;
+        }
+        .map > div {
+            width: 47px;
+            height: 47px;
+            border: 1px solid #555;
+            float: left;
+            background-size: contain;
+        }
+        .map [id^="sq1x"] {
+            background-image: url(img/ground.png);
+        }
+        .map :not([id^="sq1x"]) {
+            background-image: url(img/ground.png);
+            background-size: 100% 145%;
+            background-position: bottom;
+        }
+        .left, .right, .up, .down {
+            font-size: 40px;
+            padding: 0;
+
+        }
+        .left {
+            position: relative;
+            top: 55px;
+            left: 195px;
+        }
+        .left:hover {
+            background-color: #b9936c;
+        }
+        .right {
+            position: relative;
+            left: 240px;
+            top: 55px;
+        }
+        .right:hover {
+            background-color: #b9936c;
+        }
+        .up {
+            position: relative;
+            top: 20px;
+            left: 155px;
+            padding: 5px;  
+        }
+        .up:hover {
+            background-color: #b9936c;
+        }
+        .down {
+            position: relative;
+            top: 90px;
+            left: 115px;
+            padding: 5px;
+        }
+        .down:hover {
+            background-color: #b9936c;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1. id = "sq[R]"
+     -->
+    
+    <div class="map">
+        <div id="sq1x1"></div>
+        <div id="sq1x2"></div>
+        <div id="sq1x3"></div>
+        <div id="sq1x4"></div>
+        <div id="sq1x5"></div>
+        <div id="sq1x6"></div>
+        <div id="sq1x7"></div>
+        <div id="sq1x8"></div>
+        <div id="sq1x9"></div>
+        <div id="sq1x10"></div>
+
+        <!-- row-2 -->
+        <div id="sq2x1"></div>
+        <div id="sq2x2"></div>
+        <div id="sq2x3"></div>
+        <div id="sq2x4"></div>
+        <div id="sq2x5"></div>
+        <div id="sq2x6"></div>
+        <div id="sq2x7"></div>
+        <div id="sq2x8"></div>
+        <div id="sq2x9"></div>
+        <div id="sq2x10"></div>
+
+        <!-- row-3 -->
+        <div id="sq3x1"></div>
+        <div id="sq3x2"></div>
+        <div id="sq3x3"></div>
+        <div id="sq3x4"></div>
+        <div id="sq3x5"></div>
+        <div id="sq3x6"></div>
+        <div id="sq3x7"></div>
+        <div id="sq3x8"></div>
+        <div id="sq3x9"></div>
+        <div id="sq3x10"></div>
+
+        <!-- row-4 -->
+        <div id="sq4x1"></div>
+        <div id="sq4x2"></div>
+        <div id="sq4x3"></div>
+        <div id="sq4x4"></div>
+        <div id="sq4x5"></div>
+        <div id="sq4x6"></div>
+        <div id="sq4x7"></div>
+        <div id="sq4x8"></div>
+        <div id="sq4x9"></div>
+        <div id="sq4x10"></div>
+
+        <!-- row-5 -->
+        <div id="sq5x1"></div>
+        <div id="sq5x2"></div>
+        <div id="sq5x3"></div>
+        <div id="sq5x4"></div>
+        <div id="sq5x5"></div>
+        <div id="sq5x6"></div>
+        <div id="sq5x7"></div>
+        <div id="sq5x8"></div>
+        <div id="sq5x9"></div>
+        <div id="sq5x10"></div>
+
+        <!-- row-6 -->
+        <div id="sq6x1"></div>
+        <div id="sq6x2"></div>
+        <div id="sq6x3"></div>
+        <div id="sq6x4"></div>
+        <div id="sq6x5"></div>
+        <div id="sq6x6"></div>
+        <div id="sq6x7"></div>
+        <div id="sq6x8"></div>
+        <div id="sq6x9"></div>
+        <div id="sq6x10"></div>
+
+        <!-- row-7 -->
+        <div id="sq7x1"></div>
+        <div id="sq7x2"></div>
+        <div id="sq7x3"></div>
+        <div id="sq7x4"></div>
+        <div id="sq7x5"></div>
+        <div id="sq7x6"></div>
+        <div id="sq7x7"></div>
+        <div id="sq7x8"></div>
+        <div id="sq7x9"></div>
+        <div id="sq7x10"></div>
+
+        <!-- row-8 -->
+        <div id="sq8x1"></div>
+        <div id="sq8x2"></div>
+        <div id="sq8x3"></div>
+        <div id="sq8x4"></div>
+        <div id="sq8x5"></div>
+        <div id="sq8x6"></div>
+        <div id="sq8x7"></div>
+        <div id="sq8x8"></div>
+        <div id="sq8x9"></div>
+        <div id="sq8x10"></div>
+
+        <!-- row-9 -->
+        <div id="sq9x1"></div>
+        <div id="sq9x2"></div>
+        <div id="sq9x3"></div>
+        <div id="sq9x4"></div>
+        <div id="sq9x5"></div>
+        <div id="sq9x6"></div>
+        <div id="sq9x7"></div>
+        <div id="sq9x8"></div>
+        <div id="sq9x9"></div>
+        <div id="sq9x10"></div>
+
+        <!-- row-10 -->
+        <div id="sq10x1"></div>
+        <div id="sq10x2"></div>
+        <div id="sq10x3"></div>
+        <div id="sq10x4"></div>
+        <div id="sq10x5"></div>
+        <div id="sq10x6"></div>
+        <div id="sq10x7"></div>
+        <div id="sq10x8"></div>
+        <div id="sq10x9"></div>
+        <div id="sq10x10"></div>
+    </div>
+<div class="controls">
+    <button class="left" onclick="moveLeft()">⇦</button>
+    <button class="right" onclick="moveRight()">⇨</button>
+    <button class="up" onclick="moveUp()">⇧</button>
+    <button class="down" onclick="moveDown()">⇩</button>
+
+
+</div>
+    <script>
+        let row = 1
+        let col = 1
+          
+        let gRow = Math.round(Math.random() * 9 + 1 )
+        let gCol = Math.round(Math.random() * 9 + 1 )
+
+        let gId  = "sq" + gRow + "x" + gCol
+        let gDiv =  window[gId]
+        gDiv.style.backgroundImage = 'url(img/gold.png)'
+        gDiv.style.backgroundSize = 'contain'
+
+        function update () {
+        let id = "sq" + row + "x" + col
+
+        let div = window[id]
+        div.style.backgroundImage = 'url(img/miner.png)'
+        div.style.backgroundSize = 'contain'
+        }
+        function clear() {
+        let id = "sq" + row + "x" + col
+
+        let div = window[id]
+        div.style.backgroundImage = 'none'
+        div.style.backgroundColor = '#000'
+        }
+
+        function moveRight() {
+            clear()
+            col++
+            limits()
+            update()
+        }
+        function moveLeft() {
+            clear()
+            col--
+            limits()
+            update()
+        }
+        function moveUp() {
+            clear()
+            row--
+            limits() 
+            update() 
+        }
+        function moveDown() {
+            clear()
+            row++
+            limits() 
+            update()   
+        }
+
+        function limits() {
+            if (col > 10) {
+                col = 10
+            }
+            if (col < 1) {
+                col = 1
+            }
+            if (row > 10) {
+                row = 10
+            }
+            if (row < 1) {
+                row = 1
+            }
+            }
+        update()
+        
+    </script>
+
+</body>
+</html>
