@@ -204,16 +204,20 @@
     <script>
         let row = 1
         let col = 1
-          
+
+        
         let gRow = Math.round(Math.random() * 9 + 1 )
         let gCol = Math.round(Math.random() * 9 + 1 )
-
+            
+    
         let gId  = "sq" + gRow + "x" + gCol
         let gDiv =  window[gId]
         gDiv.style.backgroundImage = 'url(img/gold.png)'
         gDiv.style.backgroundSize = 'contain'
+        
+        
 
-        function update () {
+        function update() {
         let id = "sq" + row + "x" + col
 
         let div = window[id]
@@ -233,24 +237,28 @@
             col++
             limits()
             update()
+            gold()
         }
         function moveLeft() {
             clear()
             col--
             limits()
             update()
+            gold()
         }
         function moveUp() {
             clear()
             row--
             limits() 
             update() 
+            gold()
         }
         function moveDown() {
             clear()
             row++
             limits() 
-            update()   
+            update() 
+            gold()
         }
 
         function limits() {
@@ -266,7 +274,15 @@
             if (row < 1) {
                 row = 1
             }
+        }
+        function gold() {
+            if (col == gCol)
+                alert("yeeeee!")
+            if (row == gRow)
+                alert("yeeeee!")
+
             }
+
         update()
         
     </script>
