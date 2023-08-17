@@ -1,0 +1,33 @@
+
+<!-- 
+    aka - media query
+ -->
+
+<script>
+    // IN DATA
+    const EXTRA_SMALL = 560
+    const SMALL = 980
+    const MEDIUM = 1200
+    
+    let windowWidth = innerWidth // innerHeight
+
+    // ADAPTIVE
+    if (windowWidth <= 60 ) {
+        alert( "Error!" )
+    }
+    else if (windowWidth <= EXTRA_SMALL) {
+        alert ( "Extra Small screen: " + windowWidth )
+    }
+    else if (windowWidth <= SMALL) {
+        alert( "Small screen: " + windowWidth )
+    }
+    else if (windowWidth <= MEDIUM) {
+        alert( "Medium screen: " + windowWidth )
+    }
+    else if (windowWidth >= 1200) {
+        alert( "Large screen: " + windowWidth )
+    }
+    else if (windowWith >= 3000) {
+        alert( "Error!" )
+    }
+</script>
