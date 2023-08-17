@@ -212,6 +212,8 @@
     
         let gId  = "sq" + gRow + "x" + gCol
         let gDiv =  window[gId]
+        let gFound = false
+
         gDiv.style.backgroundImage = 'url(img/gold.png)'
         gDiv.style.backgroundSize = 'contain'
         
@@ -276,9 +278,11 @@
             }
         }
         function gold() {
-            if (col == gCol, row == gRow)
+            if (col == gCol && row == gRow && !gFound) {
                 alert("yeeeee!")
+            gFound = true
             }
+        }
 
         update()
         
