@@ -20,6 +20,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOREST | LOOPING</title>
+    <style>
+        body {
+            background-color: #112;
+        }
+        #forest {
+            border: 1px solid white;
+            position: relative;
+            width: 600px;
+            height: 600px;
+        }
+        .tree {
+            position: absolute;
+        }
+
+    </style>
  </head>
  <body>
 
@@ -31,26 +46,48 @@
 
     <script>
         // define the function
-        function addTree(number, color) {
-            if (number == 1) {
-                forest.innerHTML += svg_1.replace('???' ,
-                 `style="fill:${color}"`)
-            }
-            if (number == 2) {
-                forest.innerHTML += svg_2.replace('???' ,
-                 `style="fill:${color}"`)
-            }
-            if (number == 3) {
-                forest.innerHTML += svg_3.replace('???' ,
-                 `style="fill:${color}"`)
+        function addTree(number, color, bottom, left, scale) {
+
+            switch (number) {
+                case 1:
+                forest.innerHTML += 
+                `<div class="tree" style="left: ${left}px; bottom: ${bottom}px; transform: scale(${scale})">` +
+                   svg_1.replace('???' ,
+                     `style="fill:${color}"`) +
+                `</div>`
+                break;
+            
+                case 2:
+                forest.innerHTML += 
+                `<div class="tree" style="left: ${left}px; bottom: ${bottom}px; transform: scale(${scale})">` +
+                   svg_2.replace('???' ,
+                     `style="fill:${color}"`) +
+                `</div>`
+                break;
+            
+                case 3:
+                forest.innerHTML += 
+                `<div class="tree" style="left: ${left}px; bottom: ${bottom}px; transform: scale(${scale})">` +
+                   svg_3.replace('???' ,
+                     `style="fill:${color}"`) +
+                `</div>`
+                break;
             }
         }
 
+        /////////////////////////////////////////////////
         // call the function
-        for(let t=1; t<=10; t++) {
-        addTree ()
-        }
+        
+    
+        for(let layer = 10; layer >= 1; layer--) {
 
+            for (let n = 1; n <= 10; n++) {
+        addTree (
+            Math.round(1 + Math.random() * 2)
+            ,`rgba(0, ${210-layer * 20 + Math.random() * 40}, 0)`,
+            layer * 20, Math.random() * 500, 1/layer)
+        }
+    }
     </script>
     
  </body>
