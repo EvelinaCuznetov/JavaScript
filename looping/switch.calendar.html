@@ -1,0 +1,25 @@
+<script>
+    let day = parseInt(prompt("Day of the week?")) // 1...7
+    let calendar = prompt("Choose A or B?")
+
+    if(calendar == "B") {
+        day -- 
+        if(day == 0) {
+            day = 7
+        }
+    }
+
+    switch(day) { // === identic
+
+        case 1: document.write("Mo"); break
+        case 2: document.write("Tu"); break
+        case 3: document.write("Wd"); break
+        case 4: document.write("Th"); break
+        case 5: document.write("Fr"); break
+        case 6: document.write("Sa"); break
+        case 7: document.write("Su"); break
+
+
+        default: document.write("Are you drunk?? :D"); break
+    }
+</script>
