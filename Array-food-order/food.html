@@ -1,0 +1,77 @@
+<body>
+    <div id="menu">
+       
+    </div>
+    
+
+<script>
+    // FOOD ORDER: JS Array
+   //                       0             1                2
+    const foodNames  = [ 'Pizza',       'Salad',         'Soup'     ]  // Array of String values
+    const foodPrices = [ 100.00,         75.00,          15.25      ]  // Array of Number values
+    const foodImages = [ 'img/1.jpg',   'img/2.jpg',    'img/3.jpg' ]
+    
+    let orderTotal  = 0
+    let discountTax = 50.00
+    let finalPrice  = 0
+    // rendering the menu
+
+    function renderMenu() {
+    let html = `<table border="1" cellpadding="10">`
+        for(let i = 0; i < foodNames.length; i++) {
+        html += `<tr>`
+
+            html += `<td><img src="${foodImages[i]}" height="100" width="150"></td>`
+            html += `<td style="width: 70px; text-align: center;">${foodNames[i]}</td>`
+            html += `<td>${foodPrices[i].toFixed(2)}</td>`
+            html += `<td><button onclick="addItem(${i})">+ ADD</button></td>`
+            
+        html += `</tr>`
+        }
+
+        html += `<tr>`
+            html += `<td>Total</td>`
+            html += `<td id="cellTotal" colspan="3" style="text-align: right;"></td>`
+        html += `</tr>`
+
+        html += `<tr>`
+
+            html += `<td>For orders over 500 MDL <br> Discount tax = 50 MDL</td>`
+            html += `<td id="cellDiscount" colspan="3" style="text-align: right;"></td>`
+        
+        html += `</tr>`
+         
+       html += `</table>`
+
+       menu.innerHTML = html
+    }
+
+    function addItem(i) {
+       let quantity  = +prompt(`How many "${foodNames[i]}" do you want?`)
+       let total     = quantity * foodPrices[i] 
+       let confirmed = confirm(`"${foodNames[i]}" x ${quantity} = ${total}\nconfirm ?`)
+      
+       if (confirmed) {
+        orderTotal += total
+
+        cellTotal.innerHTML = orderTotal.toFixed(2)
+       }
+       else {
+
+       }
+
+       if (orderTotal >= 500) {
+            finalPrice = orderTotal - discountTax
+            cellDiscount.innerHTML = finalPrice.toFixed(2)
+        } 
+       else {
+            finalPrice = orderTotal
+            cellDiscount.innerHTML = finalPrice.toFixed(2)
+        }
+
+    }
+    
+    // MAIN CODE
+    renderMenu()
+</script>
+</body>
